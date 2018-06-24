@@ -9,9 +9,11 @@
       jobs:
         - linters
 
-    kebechet-auto-gate:
+    release:
       jobs:
-        - linters:
-            vars:
-              linters:
-                - coala
+        - build-python-release
+        - python-upload-pypi:
+            secrets:
+              - name: pypi_info
+                secret: pypi_test_goern
+
