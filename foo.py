@@ -24,6 +24,6 @@ __author__ = 'Christoph Görn'
 __license__ = 'GPLv3+'
 __copyright__ = 'Copyright 2018 Christoph Görn'
 
+
 if __name__ == '__main__':
     print(f'foo v{__version__}')
-    
