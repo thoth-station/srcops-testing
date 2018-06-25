@@ -1,6 +1,6 @@
 # Changelog for the Kebechet - a Thoth bot
 
-## [0.2.0] - 2018-Jun-25 - goern
+## [0.3.0] - 2018-Jun-25 - goern
 
 ### Added
 
