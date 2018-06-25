@@ -23,12 +23,12 @@ import os
 from setuptools import setup
 
 
-with open('README.md', 'rb') as fh:
+with open('README.md') as fh:
     long_description = fh.read()
 
 
 def get_version():
-    with open('foo.py', 'rb') as f:
+    with open('foo.py') as f:
         content = f.readlines()
 
     for line in content:
