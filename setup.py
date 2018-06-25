@@ -29,7 +29,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='thoth-srcops-testing',
-    version='0.1.0-rc.1',
+    version='0.1.0-rc.4',
     zip_safe=False,
     author='Christoph Görn',
     author_email='goern@redhat.com',
