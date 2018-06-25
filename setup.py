@@ -27,9 +27,18 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
+def get_version():
+    with open("foo.py") as f:
+        content = f.readlines()
+
+    for line in content:
+        if line.startswith('__version__ ='):
+            return line.split(' = ')[1][1:-2]
+    raise ValueError("No version identifier found")
+
 setup(
     name='thoth-srcops-testing',
-    version='0.1.0-rc.4',
+    version=get_version(),
     zip_safe=False,
     author='Christoph Görn',
     author_email='goern@redhat.com',
