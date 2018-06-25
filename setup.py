@@ -38,7 +38,7 @@ setup(
     description='This is a test.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    py_modules=['food'],
+    py_modules=['foo'],
     url='https://github.com/thoth-station/srcops-testing',
     license='GPLv3+',
     keywords='srcops thoth zuul',
