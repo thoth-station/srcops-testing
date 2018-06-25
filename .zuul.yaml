@@ -11,8 +11,5 @@
 
     release:
       jobs:
-        - python-upload-pypi:
-            secrets:
-              - name: pypi_info
-                secret: pypi_test_goern
+        - upload-test-pypi
 
