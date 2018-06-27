@@ -1,6 +1,6 @@
-# Changelog for the Kebechet - a Thoth bot
+# Changelog for the SrcOps - a Thoth Source Operations test repository 
 
-## [0.3.0] - 2018-Jun-25 - goern
+## [0.4.0] - 2018-Jun-27 - goern
 
 ### Added
 
