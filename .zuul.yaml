@@ -1,14 +1,23 @@
 - project:
     check:
       jobs:
+        - openshift-test
         - linters:
             vars:
               linters:
                 - coala
     gate:
       jobs:
-        - linters
+        - noop
 
     release:
       jobs:
         - upload-test-pypi
+
+- job:
+    name: openshift-test
+    parent: base-openshift
+    run: test.yaml
+    nodeset: {nodes: [{name: namespace, label: thoth-engint}]}
+    vars:
+      base_image: "python:3.6"

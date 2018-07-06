@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Fetch pods list from pre run
+      include_vars:
+        file: "{{'{{'}} zuul.executor.work_root {{'}}'}}/pods.yaml"
+
+    - add_host:
+        name: "{{'{{'}} item.pod {{'}}'}}"
+        group: "{{'{{'}} item.name {{'}}'}}"
+        ansible_connection: kubectl
+      with_items: "{{'{{'}} pods {{'}}'}}"
+
+- hosts: srcops-testing
+  tasks:
+    - command: ls
+    - command: python foo.py
+      register: demo_output
+    - debug: var=demo_output.stdout
+    - fail:
+      when: "'0.4.0' not in demo_output.stdout"
