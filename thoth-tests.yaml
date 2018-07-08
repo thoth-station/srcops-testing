@@ -1,15 +1,9 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Fetch pods list from pre run
+    - name: Fetch ImageStreamTags list from pre run
       include_vars:
-        file: "{{'{{'}} zuul.executor.work_root {{'}}'}}/pods.yaml"
-
-    - add_host:
-        name: "{{'{{'}} item.pod {{'}}'}}"
-        group: "{{'{{'}} item.name {{'}}'}}"
-        ansible_connection: kubectl
-      with_items: "{{'{{'}} pods {{'}}'}}"
+        file: "{{'{{'}} zuul.executor.work_root {{'}}'}}/imagestreamtags.yaml"
 
 - hosts: srcops-testing
   tasks:
@@ -18,4 +12,4 @@
       register: demo_output
     - debug: var=demo_output.stdout
     - fail:
-      when: "'0.4.0' not in demo_output.stdout"
+      when: "'0.5.0' not in demo_output.stdout"
