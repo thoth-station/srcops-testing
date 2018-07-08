@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Fetch ImageStreamTags list from pre run
+      include_vars:
+        file: "{{'{{'}} zuul.executor.work_root {{'}}'}}/imagestreamtags.yaml"
+
+- hosts: srcops-testing
+  tasks:
+    - command: ls
+    - command: python foo.py
+      register: demo_output
+    - debug: var=demo_output.stdout
+    - fail:
+      when: "'0.5.0' not in demo_output.stdout"

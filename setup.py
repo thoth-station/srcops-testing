@@ -19,8 +19,10 @@
 """A foo module for SrcOps-testing."""
 
 
+import sys
 import os
 from setuptools import setup
+from setuptools.command.test import test as TestCommand
 
 
 with open('README.md') as fh:
@@ -35,6 +37,27 @@ def get_version():
         if line.startswith('__version__ ='):
             return line.split(' = ')[1][1:-2]
     raise ValueError("No version identifier found")
+
+
+class Test(TestCommand):
+    user_options = [
+        ('pytest-args=', 'a', "Arguments to pass into py.test")
+    ]
+
+    def initialize_options(self):
+        super().initialize_options()
+        self.pytest_args = ['--timeout=2',
+                            '--cov=.', '--capture=no', '--verbose']
+
+    def finalize_options(self):
+        super().finalize_options()
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        sys.exit(pytest.main(self.pytest_args))
+
 
 setup(
     name='thoth-srcops-testing',
@@ -61,5 +84,6 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy"
-    ]
+    ],
+    cmdclass={'test': Test}
 )
