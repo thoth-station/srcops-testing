@@ -1,8 +1,7 @@
 - project:
     check:
       jobs:
-        - linters
-        - thoth-tests
+        - pipenv-deploy-test
     gate:
       jobs:
         - noop
