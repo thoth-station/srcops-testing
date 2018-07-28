@@ -16,7 +16,7 @@
 
 - job:
     name: openshift-test
-    parent: base-openshift
+    parent: base-thoth-openshift
     run: test.yaml
     nodeset: {nodes: [{name: namespace, label: thoth-engint}]}
     vars:
