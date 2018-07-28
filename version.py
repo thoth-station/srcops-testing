@@ -18,7 +18,13 @@
 
 """A foo module for SrcOps-testing."""
 
-from version import get_version
+__version__ = '0.6.0'
+__title__ = 'srcops-testing'
+__author__ = 'Christoph Görn'
+__license__ = 'GPLv3+'
+__copyright__ = 'Copyright 2018 Christoph Görn'
 
-if __name__ == '__main__':
-    print(f'foo v{get_version()}')
+
+def get_version() -> str:
+    """Get and return foo's version."""
+    return __version__
