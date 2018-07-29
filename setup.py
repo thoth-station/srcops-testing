@@ -28,7 +28,7 @@ with open('README.md') as fh:
 
 
 def get_version():
-    with open('foo.py') as f:
+    with open('version.py') as f:
         content = f.readlines()
 
     for line in content:
