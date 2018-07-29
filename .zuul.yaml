@@ -10,6 +10,10 @@
       jobs:
         - upload-test-pypi
 
+    kebechet-auto-gate:
+      jobs:
+        - linters
+
 - job:
     name: openshift-test
     parent: base-openshift
