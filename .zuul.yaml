@@ -1,11 +1,7 @@
 - project:
     check:
       jobs:
-        - openshift-test
-        - linters:
-            vars:
-              linters:
-                - coala
+        - linters
     gate:
       jobs:
         - noop
