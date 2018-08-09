@@ -2,8 +2,9 @@
 - project:
     check:
       jobs:
+        - demo-pod
         - linters
-    gate:
+   gate:
       jobs:
         - noop
 
