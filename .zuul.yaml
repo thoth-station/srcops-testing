@@ -20,4 +20,4 @@
     name: pipenv-setuppy-test
     parent: base-openshift-pod
     run: test.yaml
-    nodeset: openpaas-fedora
+    nodeset: openpaas-thoth-python-36-centos7-pod
