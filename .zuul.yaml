@@ -2,7 +2,7 @@
 - project:
     check:
       jobs:
-        - demo-pod
+        - pipenv-setuppy-test
         - linters
     gate:
       jobs:
