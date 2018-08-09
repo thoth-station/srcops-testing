@@ -15,9 +15,7 @@
         - linters
 
 - job:
-    name: openshift-test
-    parent: base-openshift-native
+    name: demo-pod
+    parent: base-openshift-pod
     run: test.yaml
-    nodeset: {nodes: [{name: namespace, label: thoth-engint}]}
-    vars:
-      base_image: "python:3.6"
+    nodeset: openpaas-fedora
