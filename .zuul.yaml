@@ -17,7 +17,7 @@
         - linters
 
 - job:
-    name: demo-pod
+    name: pipenv-setuppy-test
     parent: base-openshift-pod
     run: test.yaml
     nodeset: openpaas-fedora
