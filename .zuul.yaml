@@ -13,9 +13,3 @@
     kebechet-auto-gate:
       jobs:
         - linters
-
-- job:
-    name: demo-pod
-    parent: base-openshift-pod
-    run: test.yaml
-    nodeset: openpaas-fedora
