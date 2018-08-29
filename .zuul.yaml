@@ -14,7 +14,6 @@
         - linters
 
 - job:
-    name: pipenv-setuppy-test
-    parent: base-openshift-pod
+    name: demo-pod
     run: test.yaml
-    nodeset: openpaas-thoth-python-36-centos7-pod
+    nodeset: thoth-python-36-centos7-pod

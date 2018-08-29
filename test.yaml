@@ -1,9 +1,5 @@
 - hosts: pod
   tasks:
-    - command: pipenv run pyton setup.py test
-      args:
-        chdir: "{{ zuul.project.src_dir }}"
-
     - command: coala --ci
       args:
         chdir: "{{ zuul.project.src_dir }}"
