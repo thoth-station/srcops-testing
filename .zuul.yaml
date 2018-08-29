@@ -16,4 +16,4 @@
 - job:
     name: demo-pod
     run: test.yaml
-    nodeset: thoth-python-36-centos7-pod
+    nodeset: openpaas-thoth-python-36-centos7-pod
