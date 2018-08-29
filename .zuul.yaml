@@ -1,15 +1,19 @@
+---
 - project:
     check:
       jobs:
-        - linters
+        - demo-pod
     gate:
       jobs:
-        - noop
-
+        - linters
     release:
       jobs:
         - upload-test-pypi
-
     kebechet-auto-gate:
       jobs:
         - linters
+
+- job:
+    name: demo-pod
+    run: test.yaml
+    nodeset: thoth-python-36-centos7-pod
