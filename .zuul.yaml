@@ -2,16 +2,13 @@
 - project:
     check:
       jobs:
-        - pipenv-setuppy-test
-        - linters
+        - demo-pod
     gate:
       jobs:
-        - noop
-
+        - linters
     release:
       jobs:
         - upload-test-pypi
-
     kebechet-auto-gate:
       jobs:
         - linters
