@@ -7,3 +7,8 @@
     - command: python foo.py
       args:
         chdir: "{{ zuul.project.src_dir }}"
+  - pause:
+      seconds: 30
+  - command: python3 foo.py
+    args:
+      chdir: "{{ zuul.project.src_dir }}"
