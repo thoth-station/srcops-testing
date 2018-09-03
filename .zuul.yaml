@@ -15,5 +15,6 @@
 
 - job:
     name: demo-pod
+    parent: base-openshift-pod
     run: test.yaml
     nodeset: openpaas-thoth-python-36-centos7-pod
