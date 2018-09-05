@@ -4,6 +4,10 @@
       args:
         chdir: "{{ zuul.project.src_dir }}"
 
-    - command: coala --ci
+    - command: pip3 --version
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+
+    - command: coala --version
       args:
         chdir: "{{ zuul.project.src_dir }}"
