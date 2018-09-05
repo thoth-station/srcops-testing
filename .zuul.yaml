@@ -2,6 +2,7 @@
 - project:
     check:
       jobs:
+        - linters-pod
         - demo-pod
     gate:
       jobs:
@@ -17,4 +18,10 @@
     name: demo-pod
     parent: base-openshift-pod
     run: test.yaml
+    nodeset: openpaas-thoth-python-36-centos7-pod
+
+- job:
+    name: linters-pod
+    parent: base-openshift-pod
+    run: linters.yaml
     nodeset: openpaas-thoth-python-36-centos7-pod
