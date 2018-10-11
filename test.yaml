@@ -1,7 +1,13 @@
-hosts: pod
-tasks:
-  - pause:
-      seconds: 30
-  - command: python3 foo.py
-    args:
-      chdir: "{{ zuul.project.src_dir }}"
+- hosts: pod
+  tasks:
+    - command: python3 foo.py
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+
+    - command: pip3 --version
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+
+    - command: coala --version
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
