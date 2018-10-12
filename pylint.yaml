@@ -1,6 +1,6 @@
 ---
 - hosts: pod
   tasks:
-    - command: "find . -iname *.py | xargs pylint"
+    - command: find . -iname \*.py | xargs pylint
       args:
         chdir: "{{ zuul.project.src_dir }}"
