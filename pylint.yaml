@@ -1,0 +1,4 @@
+---
+- hosts: pod
+  tasks:
+    - command: "pylint {{ zuul.project.src_dir }}"

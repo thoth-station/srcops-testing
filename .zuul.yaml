@@ -1,7 +1,8 @@
 - project:
     check:
       jobs:
-        - linter-job
+        - thoth-coala
+        - thoth-pylint
     gate:
       jobs:
         - noop
@@ -14,12 +15,20 @@
       jobs:
         - noop
 
-# Test openshiftpods provider running in a shared project with regular sa
 - job:
-    name: linter-job
+    name: thoth-pylint
     parent: base-openshift-pod
     nodeset:
       nodes:
         - name: pod
           label: linter-pod
-    run: test.yaml
+    run: pylint.yaml
+
+- job:
+    name: thoth-coala
+    parent: base-openshift-pod
+    nodeset:
+      nodes:
+        - name: pod
+          label: coala-pod
+    run: coala.yaml
