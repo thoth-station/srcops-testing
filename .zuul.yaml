@@ -14,12 +14,11 @@
       jobs:
         - noop
 
-# Test openshiftpods provider running in a shared project with regular sa
 - job:
-    name: linter-job
+    name: thoth-pipenv-pytest
     parent: base-openshift-pod
     nodeset:
       nodes:
         - name: pod
-          label: linter-pod
-    run: test.yaml
+          label: linter-pod # FIXME there should be a seperate pod for pytest
+    run: pytest.yaml
