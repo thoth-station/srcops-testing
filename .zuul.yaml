@@ -1,8 +1,8 @@
 - project:
     check:
       jobs:
-        - thoth-coala
-        - thoth-pylint
+        - thoth-coala-dev
+        - thoth-pylint-dev
     gate:
       jobs:
         - noop
@@ -16,7 +16,7 @@
         - noop
 
 - job:
-    name: thoth-pylint
+    name: thoth-pylint-dev
     parent: base-openshift-pod
     nodeset:
       nodes:
@@ -25,7 +25,7 @@
     run: pylint.yaml
 
 - job:
-    name: thoth-coala
+    name: thoth-coala-dev
     parent: base-openshift-pod
     nodeset:
       nodes:
