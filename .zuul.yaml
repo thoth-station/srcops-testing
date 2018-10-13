@@ -2,6 +2,7 @@
     check:
       jobs:
         - thoth-coala-dev
+        - thoth-coala
         - thoth-pylint-dev
     gate:
       jobs:
