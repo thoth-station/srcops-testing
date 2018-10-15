@@ -21,5 +21,6 @@
     nodeset:
       nodes:
         - name: pod
-          label: linter-pod # FIXME there should be a seperate pod for pytest
+          label: linter-pod
+          # FIXME there should be a seperate pod for pytest
     run: pytest.yaml
