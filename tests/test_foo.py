@@ -18,13 +18,12 @@
 
 """A foo module for SrcOps-testing."""
 
-__version__ = "18.07.29"
-__title__ = 'srcops-testing'
-__author__ = 'Christoph Görn'
-__license__ = 'GPLv3+'
-__copyright__ = 'Copyright 2018 Christoph Görn'
+
+import pytest
+
+import foo
 
 
-def get_version() -> str:
-    """Get and return foo's version."""
-    return __version__
+class TestFoo(object):
+    def test_version(self):
+        assert foo.get_version() is not None

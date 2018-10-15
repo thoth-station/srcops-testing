@@ -1,7 +1,8 @@
 - project:
     check:
       jobs:
-        - linter-job
+        - thoth-pytest
+        - thoth-pylint
     gate:
       jobs:
         - noop
@@ -13,13 +14,3 @@
     kebechet-auto-gate:
       jobs:
         - noop
-
-# Test openshiftpods provider running in a shared project with regular sa
-- job:
-    name: linter-job
-    parent: base-openshift-pod
-    nodeset:
-      nodes:
-        - name: pod
-          label: linter-pod
-    run: test.yaml
