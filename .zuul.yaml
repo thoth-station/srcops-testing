@@ -1,7 +1,6 @@
 - project:
     check:
       jobs:
-        - thoth-coala
         - thoth-pytest
         - thoth-pylint
     gate:
