@@ -1,7 +1,8 @@
 - project:
     check:
       jobs:
-        - linter-job
+        - thoth-coala
+        - thoth-pipenv-pytest
     gate:
       jobs:
         - noop
