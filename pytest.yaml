@@ -1,6 +1,9 @@
 ---
 - hosts: pod
   tasks:
+    - command: pipenv install --dev
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
     - command: pipenv run pytest
       args:
         chdir: "{{ zuul.project.src_dir }}"
