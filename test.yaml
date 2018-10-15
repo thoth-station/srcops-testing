@@ -1,6 +1,0 @@
----
-- hosts: pod
-  tasks:
-    - command: python3 foo.py
-      args:
-        chdir: "{{ zuul.project.src_dir }}"

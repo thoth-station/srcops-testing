@@ -1,7 +1,9 @@
 - project:
     check:
       jobs:
-        - thoth-pipenv-pytest
+        - thoth-coala
+        - thoth-pytest
+        - thoth-pylint
     gate:
       jobs:
         - noop
@@ -13,13 +15,3 @@
     kebechet-auto-gate:
       jobs:
         - noop
-
-- job:
-    name: thoth-pipenv-pytest
-    parent: base-openshift-pod
-    nodeset:
-      nodes:
-        - name: pod
-          label: linter-pod
-          # FIXME there should be a seperate pod for pytest
-    run: pytest.yaml
