@@ -1,20 +1,20 @@
 - project:
     check:
       jobs:
-        - thoth-coala-dev
         - thoth-coala
-        - thoth-pylint-dev
+        - thoth-pytest
     gate:
       jobs:
-        - noop
-
+        - thoth-coala
+        - thoth-pytest
     release:
       jobs:
         - upload-test-pypi
 
     kebechet-auto-gate:
       jobs:
-        - noop
+        - thoth-coala
+        - thoth-pytest
 
 - job:
     name: thoth-pylint-dev
