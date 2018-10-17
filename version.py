@@ -18,7 +18,7 @@
 
 """A foo module for SrcOps-testing."""
 
-__version__ = "18.07.29"
+__version__ = "2018.10.17"
 __title__ = 'srcops-testing'
 __author__ = 'Christoph Görn'
 __license__ = 'GPLv3+'
