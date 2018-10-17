@@ -1,25 +1,35 @@
 - project:
     check:
       jobs:
-        - linter-job
+        - thoth-coala
+        - thoth-pytest
     gate:
       jobs:
-        - noop
-
+        - thoth-coala
+        - thoth-pytest
     release:
       jobs:
         - upload-test-pypi
 
     kebechet-auto-gate:
       jobs:
-        - noop
+        - thoth-coala
+        - thoth-pytest
 
-# Test openshiftpods provider running in a shared project with regular sa
 - job:
-    name: linter-job
+    name: thoth-pylint-dev
     parent: base-openshift-pod
     nodeset:
       nodes:
         - name: pod
           label: linter-pod
-    run: test.yaml
+    run: pylint.yaml
+
+- job:
+    name: thoth-coala-dev
+    parent: base-openshift-pod
+    nodeset:
+      nodes:
+        - name: pod
+          label: coala-pod
+    run: coala.yaml
