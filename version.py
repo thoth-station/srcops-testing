@@ -18,6 +18,7 @@
 
 """A foo module for SrcOps-testing."""
 
+
 __version__ = "2018.10.18"
 __title__ = 'srcops-testing'
 __author__ = 'Christoph Görn'
