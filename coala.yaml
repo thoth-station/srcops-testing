@@ -1,0 +1,6 @@
+---
+- hosts: pod
+  tasks:
+    - command: coala --ci
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
