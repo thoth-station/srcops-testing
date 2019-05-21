@@ -8,9 +8,6 @@
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
-    release:
-      jobs:
-        - "upload-test-pypi"
 
     kebechet-auto-gate:
       jobs:
