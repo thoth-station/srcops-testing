@@ -3,7 +3,7 @@
       queue: "thoth-station/core"
       jobs:
         - "thoth-coala"
-        - "thoth-pytest"
+#        - "thoth-pytest"
         - "thoth-timeout-test"
     gate:
       jobs:
@@ -21,5 +21,5 @@
     nodeset:
       nodes:
         - name: "pod"
-          label: linter-pod
+          label: "thoth-pytest"
     run: timeout.yaml
