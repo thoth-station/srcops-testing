@@ -46,7 +46,7 @@ class Test(TestCommand):
 
     def initialize_options(self):
         super().initialize_options()
-        self.pytest_args = ['--timeout=360', '--cov=./srcops', '--capture=no', '--verbose']
+        self.pytest_args = ['--timeout=360', '--cov=.', '--capture=no', '--verbose']
 
     def finalize_options(self):
         super().finalize_options()
