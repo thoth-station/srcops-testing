@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - add_host:
+        name: thoth-pytest-0000022502
+        group: pod
+        ansible_connection: kubectl
+
+- hosts: pod
+  tasks:
+    - command: sleep 305

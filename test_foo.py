@@ -33,7 +33,13 @@ class TestFoo():
         """Test if the version if what we think it should be."""
         assert version.__version__ == version.get_version()
 
-    def test_sleep(self):
+    def test_short_sleep(self):
+        """Test if we can sleep and not time out..."""
+        print("pytest is hibernating for a little bit more than 1 minute...")
+        time.sleep(60 * 1 + 5)
+        print("if running in a Pod, I good...")
+
+    def test_long_sleep(self):
         """Test if we can sleep and time out..."""
         print("pytest is hibernating for a little bit more than 5 minutes...")
         time.sleep(60 * 5 + 5)

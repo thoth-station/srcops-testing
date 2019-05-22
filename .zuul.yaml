@@ -4,6 +4,7 @@
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
+        - "thoth-timeout-test"
     gate:
       jobs:
         - "thoth-coala"
@@ -13,3 +14,12 @@
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
+
+- job:
+    name: "thoth-timeout-test"
+    parent: "base-openshift-pod"
+    nodeset:
+      nodes:
+        - name: "pod"
+          label: linter-pod
+    run: timeout.yaml
