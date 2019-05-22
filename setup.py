@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # thoth-package-extract
-# Copyright(C) 2018 Christoph Görn
+# Copyright(C) 2018,2019 Christoph Görn
 #
 # This program is free software: you can redistribute it and / or modify
 # it under the terms of the GNU General Public License as published by

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # thoth-package-extract
-# Copyright(C) 2018 Christoph Görn
+# Copyright(C) 2018,2019 Christoph Görn
 #
 # This program is free software: you can redistribute it and / or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ __version__ = "2018.10.18"
 __title__ = 'srcops-testing'
 __author__ = 'Christoph Görn'
 __license__ = 'GPLv3+'
-__copyright__ = 'Copyright 2018 Christoph Görn'
+__copyright__ = 'Copyright 2018,2019 Christoph Görn'
 
 
 def get_version() -> str:
