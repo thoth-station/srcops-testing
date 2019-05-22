@@ -20,7 +20,10 @@
 
 
 import os
+import sys
+
 from setuptools import setup
+from setuptools.command.test import test as TestCommand
 
 
 with open('README.md') as fh:
@@ -36,6 +39,24 @@ def get_version():
             return line.split(' = ')[1][1:-2]
     raise ValueError("No version identifier found")
 
+class Test(TestCommand):
+    user_options = [
+        ('pytest-args=', 'a', "Arguments to pass into py.test")
+    ]
+
+    def initialize_options(self):
+        super().initialize_options()
+        self.pytest_args = ['--timeout=360', '--cov=./srcops', '--capture=no', '--verbose']
+
+    def finalize_options(self):
+        super().finalize_options()
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        sys.exit(pytest.main(self.pytest_args))
+
 setup(
     name='thoth-srcops-testing',
     version=get_version(),
@@ -48,6 +69,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     py_modules=['foo'],
+    tests_require=["pytest","pytest-cov","pytest-timeout"],
+    cmdclass={'test': Test},
     url='https://github.com/thoth-station/srcops-testing',
     license='GPLv3+',
     keywords='srcops thoth zuul',
