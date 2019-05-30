@@ -9,6 +9,19 @@
         - "thoth-coala"
         - "thoth-pytest"
 
+    post:
+      jobs:
+        - "trigger-build":
+            vars:
+              cluster: "paas.psi.redhat.com"
+              namespace: "thoth-core-test"
+              buildConfigName: "user-api"
+        - "trigger-build":
+            vars:
+              cluster: "pass.psi.redhat.com"
+              namespace: "thoth-core-test"
+              buildConfigName: "management-api"
+
     kebechet-auto-gate:
       jobs:
         - "thoth-coala"
