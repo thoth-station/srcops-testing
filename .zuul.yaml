@@ -1,35 +1,28 @@
 - project:
     check:
+      queue: "thoth-station/core"
       jobs:
-        - thoth-coala
-        - thoth-pytest
+        - "thoth-coala"
+        - "thoth-pytest"
     gate:
       jobs:
-        - thoth-coala
-        - thoth-pytest
-    release:
+        - "thoth-coala"
+        - "thoth-pytest"
+
+    post:
       jobs:
-        - upload-test-pypi
+        - "trigger-build":
+            vars:
+              cluster: "paas.psi.redhat.com"
+              namespace: "thoth-test-core"
+              buildConfigName: "result-api"
+              # - "trigger-build":
+              #     vars:
+              #       cluster: "paas.psi.redhat.com"
+              #       namespace: "thoth-test-core"
+              #       buildConfigName: "management-api"
 
     kebechet-auto-gate:
       jobs:
-        - thoth-coala
-        - thoth-pytest
-
-- job:
-    name: thoth-pylint-dev
-    parent: base-openshift-pod
-    nodeset:
-      nodes:
-        - name: pod
-          label: linter-pod
-    run: pylint.yaml
-
-- job:
-    name: thoth-coala-dev
-    parent: base-openshift-pod
-    nodeset:
-      nodes:
-        - name: pod
-          label: coala-pod
-    run: coala.yaml
+        - "thoth-coala"
+        - "thoth-pytest"
