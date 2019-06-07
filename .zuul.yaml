@@ -16,11 +16,11 @@
               cluster: "paas.psi.redhat.com"
               namespace: "thoth-test-core"
               buildConfigName: "result-api"
-              # - "trigger-build":
-              #     vars:
-              #       cluster: "paas.psi.redhat.com"
-              #       namespace: "thoth-test-core"
-              #       buildConfigName: "management-api"
+        - "trigger-build":
+            vars:
+              cluster: "paas.psi.redhat.com"
+              namespace: "thoth-test-core"
+              buildConfigName: "management-api"
 
     kebechet-auto-gate:
       jobs:
