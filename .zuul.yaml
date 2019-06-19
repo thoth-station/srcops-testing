@@ -20,7 +20,7 @@
             vars:
               webhook_url: >-
                 https://paas.psi.redhat.com/oapi/v1/namespaces/thoth-test-core/
-                buildconfigs/metrics-exporter/webhooks"
+                buildconfigs/metrics-exporter
 
     kebechet-auto-gate:
       jobs:
