@@ -2,9 +2,9 @@
     check:
       queue: "thoth-station/core"
       jobs:
+        - "thoth-github-wip"
         - "thoth-coala"
         - "thoth-pytest"
-        - "thoth-github-wip"
     gate:
       jobs:
         - "thoth-coala"
