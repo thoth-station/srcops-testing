@@ -2,6 +2,7 @@
     check:
       queue: "thoth-station/core"
       jobs:
+        - "dco-license"
         - "thoth-github-wip"
         - "thoth-coala"
         - "thoth-pytest"
