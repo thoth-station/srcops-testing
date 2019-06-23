@@ -4,6 +4,7 @@
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
+        - "thoth-github-wip"
     gate:
       jobs:
         - "thoth-coala"
