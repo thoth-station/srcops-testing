@@ -8,10 +8,9 @@ cli:
   project: git@github.com:thoth-station/srcops-testing.git
 analyze:
   modules:
-  - name: .
-    type: pip
-    target: .
-    path: .
-    options:
-      strategy: pipenv
-
+    - name: .
+      type: pip
+      target: .
+      path: .
+      options:
+        strategy: pipenv
