@@ -28,15 +28,3 @@
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
-
-- job:
-    name: thoth-apply-openshift-templates
-    parent: base-openshift-pod
-    nodeset:
-      nodes:
-        - name: pod
-          label: thoth-ops
-    run: openshift.yaml
-    secrets:
-      - name: THOTH_OPS_TOKEN
-        secret: thoth_ops
