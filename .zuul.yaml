@@ -18,8 +18,20 @@
               cluster: "paas.psi.redhat.com"
               namespace: "thoth-test-core"
               buildConfigName: "metrics-exporter"
+        - "thoth-apply-openshift-templates":
+            vars:
+              target_project: "thoth-test-core"
 
     kebechet-auto-gate:
       jobs:
         - "thoth-coala"
         - "thoth-pytest"
+
+- job:
+    name: thoth-apply-openshift-templates
+    parent: base-openshift-pod
+    nodeset:
+      nodes:
+        - name: pod
+          label: thoth-ops
+    run: openshift.yaml

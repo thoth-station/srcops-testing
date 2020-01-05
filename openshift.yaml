@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  vars:
+    cluster: "paas.psi.redhat.com"
+
+  tasks:
+    - name: "OpenShift Client version"
+      command: "oc version"
