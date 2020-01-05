@@ -7,3 +7,9 @@
   tasks:
     - name: "OpenShift Client version"
       command: "oc version"
+
+    - name: "OpenShift whoami"
+      command: "oc whoami"
+
+    - name: "OpenShift project status"
+      command: "oc status"
