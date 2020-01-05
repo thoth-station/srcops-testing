@@ -32,13 +32,14 @@
 - job:
     name: thoth-apply-openshift-templates
     parent: base-openshift-pod
+    post-review: false
     nodeset:
       nodes:
         - name: pod
           label: thoth-ops
     run: openshift.yaml
     secrets:
-      - name: thoth_ops
+      - name: THOTH_OPS_TOKEN
         secret: thoth_ops
 
 - secret:
