@@ -5,11 +5,10 @@
     cluster: "paas.psi.redhat.com"
 
   tasks:
-    - name: "OpenShift Client version"
-      command: "oc version"
+    - name: "log in as thoth-ops"
+      command: "oc login --token $THOTH_OPS_TOKEN"
+      environment:
+        THOTH_OPS_TOKEN": "{{ thoth_ops.key }}"
 
     - name: "OpenShift whoami"
       command: "oc whoami"
-
-    - name: "OpenShift project status"
-      command: "oc status"

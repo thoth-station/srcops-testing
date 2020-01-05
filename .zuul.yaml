@@ -2,10 +2,10 @@
     check:
       queue: "thoth-station/core"
       jobs:
+        - "thoth-github-wip"
         - "thoth-apply-openshift-templates":
             vars:
               target_project: "thoth-test-core"
-        # - "thoth-github-wip"
         # - "thoth-coala"
         # - "thoth-pytest"
     gate:
@@ -37,3 +37,6 @@
         - name: pod
           label: thoth-ops
     run: openshift.yaml
+    secrets:
+      - name: thoth_ops
+        secret: thoth_ops
