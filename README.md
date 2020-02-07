@@ -8,4 +8,4 @@ It has to be installed via UI
 
 ## Gitmoji?!
 
-Oh ja we love it
+Oh ja we love it!
