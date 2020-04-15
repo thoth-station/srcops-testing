@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# thoth-package-extract
-# Copyright(C) 2018,2019 Christoph Görn
+# foo
+# Copyright(C) 2018,2019,2020 Christoph Görn
 #
 # This program is free software: you can redistribute it and / or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,9 +16,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+
 """A foo module for SrcOps-testing."""
+
 
 from version import get_version
 
-if __name__ == '__main__':
-    print(f'foo v{get_version()}')
+if __name__ == "__main__":
+    print(f"foo v{get_version()}")
+    print("... with OpenShift Pipelines!")
