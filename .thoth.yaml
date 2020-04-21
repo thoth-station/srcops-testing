@@ -1,3 +1,15 @@
+host: khemenu.thoth-station.ninja
+tls_verify: false
+requirements_format: pip
+
+runtime_environments:
+  - name: rhel:8
+    operating_system:
+      name: rhel
+      version: "8"
+    python_version: "3.6"
+    recommendation_type: stable
+
 managers:
   - name: update
     configuration:
@@ -6,8 +18,11 @@ managers:
   - name: version
     configuration:
       maintainers:
-        - goern
         - fridex
+        - goern
+        - harshad16
+        - pacospace
       assignees:
         - sesheta
       labels: [bot]
+      changelog_file: true
