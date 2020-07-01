@@ -1,7 +1,10 @@
 managers:
-  - name: update
+  - name: thoth-advise
     configuration:
-      labels: [bot]
+      labels: [bot, kebechet]
+  # - name: update
+  #   configuration:
+  #     labels: [bot]
   - name: info
   - name: version
     configuration:
