@@ -10,4 +10,3 @@ It has to be installed via UI
 
 Oh ja we love it
 
-Testing
