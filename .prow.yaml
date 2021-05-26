@@ -11,10 +11,6 @@ presubmits:
             - "pre-commit"
             - "run"
             - "--all-files"
-          resources:
-            requests:
-              memory: "2Gi"
-              cpu: "2"
 
   - name: thoth-pytest-py38
     decorate: true
@@ -26,10 +22,6 @@ presubmits:
         - image: quay.io/goern/thoth-pytest:v0.13.0-dev
           command:
             - "/bin/run-pytest"
-          resources:
-            requests:
-              memory: "2Gi"
-              cpu: "2"
 
   - name: thoth-mypy-py38
     decorate: true
@@ -42,7 +34,3 @@ presubmits:
           command:
             - "/usr/local/bin/mypy"
             - "."
-          resources:
-            requests:
-              memory: "2Gi"
-              cpu: "2"
