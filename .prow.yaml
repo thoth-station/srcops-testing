@@ -34,3 +34,11 @@ presubmits:
           command:
             - "/usr/local/bin/mypy"
             - "."
+            - "--ignore-missing-imports"
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "300m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
